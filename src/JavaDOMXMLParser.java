@@ -180,9 +180,9 @@ public class JavaDOMXMLParser{
 		
 				// System.out.println(emp.id);
 				
-				if (idKey.equals(emp.id))	// NitinMuley helped here to replace '==' by 'equals()'
-				{
-					recsFound = true;
+				//if (idKey.equals(emp.id))	// NitinMuley helped here to replace '==' by 'equals()'
+				//{
+					//recsFound = true;
 					NodeList childNodes = node.getChildNodes();
 					for (int j = 0; j < childNodes.getLength(); j++) {
 						Node cNode = childNodes.item(j);
@@ -207,11 +207,11 @@ public class JavaDOMXMLParser{
 						}
 					}
 					empList.add(emp);
-				}
-				else
-				{
-					continue;
-				}
+				//}
+				//else
+				//{
+				//	continue;
+				//}
 			}
 
 		}
@@ -227,7 +227,7 @@ public class JavaDOMXMLParser{
 		
 		if(!recsFound)
 		{
-			System.out.println("No records found..");
+			//System.out.println("No records found..");
 		}
 		System.out.println("=====================================================");
 		
