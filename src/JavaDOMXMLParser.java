@@ -222,7 +222,6 @@ public class JavaDOMXMLParser{
 			System.out.println(emp);
 			////System.out.printf("%-10s %-10s %-10s\n", "osne", "two", "thredsfe");
 			////System.out.format("%3d", j) 
-
 		}
 		
 		if(!recsFound)
@@ -293,6 +292,7 @@ public class JavaDOMXMLParser{
 
 	@Override
 	public String toString() {
+		// Need to change this by using 'printf()' or 'format()' - RSD
 		return id+"\t"+name+"\t"+address+"\t"+contact;
 	}
  }
