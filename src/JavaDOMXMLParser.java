@@ -26,6 +26,10 @@ public class JavaDOMXMLParser{
 	
 	public int counter = 0;
 	
+	public static String str = new String();
+	public static final int STRING_CNT = 10;
+	public static int spaceCnt = 0;
+	
 	public String exceptionTypes[] = {"FileNotFoundException", "ParserConfigurationException","XYZException","PQRSException"};
 	
 	public static void main(String[] args) throws Exception {
@@ -167,7 +171,7 @@ public class JavaDOMXMLParser{
 		System.out.println("===================");
 		
 		System.out.println("\n=====================================================");
-		System.out.println("ID\tName\tAddress\tContact");
+		System.out.println("ID\tName\t\tAddress\t\tContact");
 		System.out.println("=====================================================");
 		
 		for (int i = 0; i < nodeList.getLength(); i++) {
@@ -190,10 +194,25 @@ public class JavaDOMXMLParser{
 						// Identifying the child tag of employee encountered.
 						if (cNode instanceof Element) {
 							String data = cNode.getLastChild().getTextContent().trim();
-							switch (cNode.getNodeName()) {
-							case "id":
-									emp.id = data;
-									break;
+							//////////////////////////////////////////////
+							int len = data.length();
+							if(len < STRING_CNT)
+							{
+								spaceCnt = STRING_CNT - len;
+								for( int n = spaceCnt; n > 0; --n )
+								{
+									data = data + " ";
+								}
+							}
+							else
+							{
+								data = data.substring(0, STRING_CNT);
+							}
+							//System.out.println("haha");
+							//////////////////////////////////////////////
+							switch (cNode.getNodeName())
+							{
+								
 								case "name":
 									emp.name = data;
 									break;
